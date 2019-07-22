@@ -18,7 +18,7 @@
 }*/
 
 body {
-	background: linear-gradient(90deg, #667788, #8899aa, #667788);
+	background: #667788;
 }
 
 header {
@@ -82,8 +82,13 @@ header {
 .intro {
 	position: static;
 	color: #f0f0ff;
-	padding: 1rem;
+	padding: 1rem 25%;
 	text-align: center;
+	font-size: 1.2rem;
+
+	a, a:visited {
+		color: #f0f0ff;	
+	}
 }
 
 footer {

@@ -88,6 +88,10 @@ header {
 
 	a, a:visited {
 		color: #f0f0ff;	
+
+		&:hover {
+			color: #112233;
+		}
 	}
 }
 

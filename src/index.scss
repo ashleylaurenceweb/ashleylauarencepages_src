@@ -1,8 +1,170 @@
-$clrbg: #ffffff;
-$clrtext: #444444;
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+
+:root {
+	--imageheight: 500px;
+	--imagewidth: 333px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: 'Quicksand', sans-serif;
+}
+
+/*html, body {
+	height: 100%;
+}*/
 
 body {
-	background-color: $clrbg;
-	color: $clrtext;
-	font-family: Arial, sans-serif;
+	background: linear-gradient(90deg, #667788, #8899aa, #667788);
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	height: 50px;
+	text-align: center;
+	color: #f0f0ff;
+	background: linear-gradient(90deg, #667788, #8899aa, #667788);
+	
+	h1 {
+		line-height: 50px;
+		text-transform: lowercase;
+		font-weight: normal;
+		letter-spacing: .5em;
+	}
+}
+
+/* styles for mobile < 768px */
+
+.hero {
+	position: relative;
+	margin-top: 50px;
+}
+
+.left {
+	background: #aabbcc;
+	position: static;
+	width: 100%;
+	overflow: hidden;
+	padding: 2rem 0;
+
+	div {
+		width: 90%;
+		max-width: var(--imagewidth);
+		max-height: 90%;
+		margin: auto;
+	}
+
+}
+
+.right {
+	background: #bbccdd;
+	position: static;
+	width: 100%;
+	overflow: hidden;
+	padding: 2rem 0;
+
+	div {
+		width: 90%;
+		max-width: var(--imagewidth);
+		max-height: 90%;
+		margin: auto;
+	}
+
+}
+
+.intro {
+	position: static;
+	color: #f0f0ff;
+	padding: 1rem;
+	text-align: center;
+}
+
+footer {
+	color: #f0f0ff;
+	padding: 1rem;
+	text-align: center;
+}
+
+/* styles for non-mobile > 768px */
+
+@media (min-width: 768px) {
+
+	.hero {
+		height: calc(100vh - 50px);
+		overflow: hidden;
+	}
+
+	.left {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60%;
+		height: 100%;
+
+		div {
+			opacity: 0;
+			width: var(--imagewidth);
+			height: var(--imageheight);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%) ;
+			right: calc(40% - var(--imagesize));
+			animation: leftImageSlide 2s forwards;
+		}
+	}
+
+	.right {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 60%;
+		height: 100%;
+		clip-path: polygon(
+			33% 0,
+			100% 0,
+			100% 100%,
+			0 100%
+		);
+
+		div {
+			opacity: 0;
+			width: var(--imagewidth);
+			height: var(--imageheight);
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%) ;
+			left: calc(-1 * var(--imagesize));
+			animation: rightImageSlide 2s forwards;
+		}
+	}
+
+
+	@keyframes leftImageSlide {
+		0% {
+			right: calc(-1 * var(--imagewidth));
+		}
+
+		100% {
+			right: calc(60% - (var(--imagewidth)/2));
+			opacity: 1;
+		}
+	}
+
+	@keyframes rightImageSlide {
+		0% {
+			left: -500px;	
+		}
+
+		100% {
+			left: calc(60% - (var(--imagewidth)/2));
+			opacity: 1;
+		}
+	}
 }

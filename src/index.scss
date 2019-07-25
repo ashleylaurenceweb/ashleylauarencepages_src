@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+
 
 :root {
 	--imageheight: 500px;
@@ -10,7 +12,7 @@
 	padding: 0;
 	list-style: none;
 	box-sizing: border-box;
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*html, body {
@@ -37,6 +39,8 @@ header {
 		text-transform: lowercase;
 		font-weight: normal;
 		letter-spacing: .5em;
+		font-family: 'Quicksand', sans-serif;
+
 	}
 }
 
